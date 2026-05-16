@@ -32,11 +32,10 @@ https://dummyjson.com/products
 
 ## Library yang Digunakan
 
-- get
-- http
-- hive
-- hive_flutter
-- shared_preferences
+- get                   : Digunakan untuk manajemen navigasi (pindah halaman) dan memunculkan snackbar pemberitahuan
+- http                  : Digunakan sebagai HTTP client untuk menembak URL API dan mengambil data produk mentah (JSON).
+- hive & hive_flutter   : Database NoSQL lokal yang sangat ringan untuk menyimpan barang-barang di keranjang belanja secara permanen.
+- shared_preferences    : Digunakan untuk menyimpan session login sederhana berupa string username di memori internal HP.
 
 ---
 
@@ -44,18 +43,18 @@ https://dummyjson.com/products
 
 ```bash
 lib/
-├── main.dart
+├── main.dart                   # Untuk masuk kedalam aplikasi & inisialisasi awal database
 ├── models/
-│   └── cart_model.dart
+│   └── cart_model.dart         # Model Hive Adapter untuk mendefinisikan objek barang belanjaan
 │
 ├── pages/
-│   ├── splash_page.dart
-│   ├── login_page.dart
-│   ├── main_navigation.dart
-│   ├── home_page.dart
-│   ├── detail_page.dart
-│   ├── cart_page.dart
-│   └── profile_page.dart
+│   ├── splash_page.dart        # Halaman awal untuk mengecek status login user secara otomatis
+│   ├── login_page.dart         # Halaman masuk sistem (wajib menggunakan password berupa NIM)
+│   ├── main_navigation.dart    # Container menu bawah (Bottom Navigation) untuk menyatukan halaman
+│   ├── home_page.dart          # Halaman utama untuk melihat katalog dan mencari produk
+│   ├── detail_page.dart        # Halaman untuk melihat detail barang dan memasukkannya ke keranjang
+│   ├── cart_page.dart          # Halaman keranjang belanja spesifik milik user yang sedang aktif
+│   └── profile_page.dart       # Halaman informasi akun pengguna sekaligus tombol keluar (logout)
 │
 ├── services/
-│   └── api_service.dart
+│   └── api_service.dart        # Berisi fungsi HTTP untuk mengambil (fetch) data produk dari API

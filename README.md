@@ -32,14 +32,10 @@ https://dummyjson.com/products
 
 ## Library yang Digunakan
 
-- get
-Digunakan untuk manajemen navigasi (pindah halaman) dan memunculkan snackbar pemberitahuan
-- http
-Digunakan sebagai HTTP client untuk menembak URL API dan mengambil data produk mentah (JSON).
-- hive & hive_flutter
-Database NoSQL lokal yang sangat ringan untuk menyimpan barang-barang di keranjang belanja secara permanen.
-- shared_preferences
-Digunakan untuk menyimpan session login sederhana berupa string username di memori internal HP.
+- get                   : Digunakan untuk manajemen navigasi (pindah halaman) dan memunculkan snackbar pemberitahuan
+- http                  : Digunakan sebagai HTTP client untuk menembak URL API dan mengambil data produk mentah (JSON).
+- hive & hive_flutter   : Database NoSQL lokal yang sangat ringan untuk menyimpan barang-barang di keranjang belanja secara permanen.
+- shared_preferences    : Digunakan untuk menyimpan session login sederhana berupa string username di memori internal HP.
 
 ---
 

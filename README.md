@@ -1,17 +1,61 @@
-# latres
+# Flutter Online Shop App
 
-A new Flutter project.
+Aplikasi toko online sederhana berbasis Flutter yang menggunakan API eksternal dari DummyJSON.  
+Aplikasi ini dibuat untuk latihan Responsi IF-C.
 
-## Getting Started
+## Fitur Aplikasi
 
-This project is a starting point for a Flutter application.
+- Login menggunakan username dan password NIM
+- Session login menggunakan SharedPreferences
+- Splash Screen
+- Bottom Navigation Bar
+- Menampilkan produk dari API eksternal
+- Search produk
+- Detail produk
+- Add to Cart
+- Cart berdasarkan user login
+- Penyimpanan cart menggunakan Hive Database
+- Hapus item cart
+- Total harga cart
+- Responsive UI
+- Logout
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## API
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+API yang digunakan:
+
+https://dummyjson.com/products
+
+---
+
+## Library yang Digunakan
+
+- get
+- http
+- hive
+- hive_flutter
+- shared_preferences
+
+---
+
+## Struktur Folder
+
+```bash
+lib/
+├── main.dart
+├── models/
+│   └── cart_model.dart
+│
+├── pages/
+│   ├── splash_page.dart
+│   ├── login_page.dart
+│   ├── main_navigation.dart
+│   ├── home_page.dart
+│   ├── detail_page.dart
+│   ├── cart_page.dart
+│   └── profile_page.dart
+│
+├── services/
+│   └── api_service.dart

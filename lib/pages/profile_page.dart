@@ -19,69 +19,231 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
 
       appBar: AppBar(
-        title: const Text("Profile"),
+
+        title: const Text(
+          "My Profile",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        centerTitle: true,
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      body: Center(
 
-        child: Column(
+        child: SingleChildScrollView(
 
-          crossAxisAlignment:
-              CrossAxisAlignment.start,
+          child: Padding(
+            padding: const EdgeInsets.all(25),
 
-          children: [
+            child: Column(
 
-            const CircleAvatar(
-              radius: 50,
-              child: Icon(
-                Icons.person,
-                size: 50,
-              ),
+              mainAxisAlignment:
+                  MainAxisAlignment.center,
+
+              children: [
+
+                Container(
+
+                  padding:
+                      const EdgeInsets.all(5),
+
+                  decoration: BoxDecoration(
+
+                    shape: BoxShape.circle,
+
+                    border: Border.all(
+                      color:
+                          const Color(0xFFFF5DA2),
+                      width: 3,
+                    ),
+
+                    boxShadow: [
+
+                      BoxShadow(
+                        color: Colors.pink
+                            .withOpacity(0.2),
+
+                        blurRadius: 25,
+                        offset:
+                            const Offset(0, 10),
+                      )
+                    ],
+                  ),
+
+                  child: const CircleAvatar(
+
+                    radius: 60,
+
+                    backgroundColor:
+                        Color(0xFFFFEEF5),
+
+                    child: Icon(
+                      Icons.person_rounded,
+                      size: 70,
+                      color: Color(0xFFFF5DA2),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 30),
+
+                Text(
+
+                  username,
+
+                  style: const TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+
+                Container(
+
+                  padding:
+                      const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 8,
+                  ),
+
+                  decoration: BoxDecoration(
+
+                    color:
+                        const Color(0xFFFFEEF5),
+
+                    borderRadius:
+                        BorderRadius.circular(
+                      30,
+                    ),
+                  ),
+
+                  child: const Text(
+
+                    "Flutter Developer 💖",
+
+                    style: TextStyle(
+                      color: Color(0xFFFF5DA2),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 35),
+
+                Container(
+
+                  width: double.infinity,
+
+                  padding:
+                      const EdgeInsets.all(25),
+
+                  decoration: BoxDecoration(
+
+                    color: Colors.white,
+
+                    borderRadius:
+                        BorderRadius.circular(
+                      30,
+                    ),
+
+                    boxShadow: [
+
+                      BoxShadow(
+                        color: Colors.pink
+                            .withOpacity(0.08),
+
+                        blurRadius: 20,
+                        offset:
+                            const Offset(0, 10),
+                      )
+                    ],
+                  ),
+
+                  child: Column(
+
+                    children: [
+
+                      const Icon(
+                        Icons.favorite_rounded,
+                        color: Color(0xFFFF5DA2),
+                        size: 40,
+                      ),
+
+                      const SizedBox(height: 15),
+
+                      const Text(
+
+                        "Terima kasih sudah menggunakan aplikasi ini ✨",
+
+                        textAlign: TextAlign.center,
+
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight:
+                              FontWeight.bold,
+                        ),
+                      ),
+
+                      const SizedBox(height: 15),
+
+                      const Text(
+
+                        "Semoga harimu menyenangkan dan semangat terus mengerjakan responsi Flutter 🚀",
+
+                        textAlign: TextAlign.center,
+
+                        style: TextStyle(
+                          color: Colors.grey,
+                          height: 1.6,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 40),
+
+                SizedBox(
+
+                  width: double.infinity,
+
+                  child: ElevatedButton.icon(
+
+                    onPressed: () async {
+
+                      SharedPreferences prefs =
+                          await SharedPreferences
+                              .getInstance();
+
+                      await prefs.remove(
+                        'username',
+                      );
+
+                      Get.offAll(
+                        () => LoginPage(),
+                      );
+                    },
+
+                    icon: const Icon(
+                      Icons.logout_rounded,
+                    ),
+
+                    label: const Text(
+                      "Logout",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight:
+                            FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
-
-            const SizedBox(height: 20),
-
-            Text(
-              "Username: $username",
-
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            const Text(
-              "Aplikasi toko online Flutter responsi IF-C.",
-            ),
-
-            const SizedBox(height: 30),
-
-            SizedBox(
-
-              width: double.infinity,
-
-              child: ElevatedButton(
-
-                onPressed: () async {
-
-                  SharedPreferences prefs =
-                      await SharedPreferences
-                          .getInstance();
-
-                  await prefs.remove('username');
-
-                  Get.offAll(
-                    () => LoginPage(),
-                  );
-                },
-
-                child: const Text("Logout"),
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );

@@ -176,7 +176,7 @@ class ProfilePage extends StatelessWidget {
 
                       const Text(
 
-                        "Terima kasih sudah menggunakan aplikasi ini ✨",
+                        "Terima kasih sudah mengadakan latres ✨",
 
                         textAlign: TextAlign.center,
 
@@ -191,7 +191,7 @@ class ProfilePage extends StatelessWidget {
 
                       const Text(
 
-                        "Semoga harimu menyenangkan dan semangat terus mengerjakan responsi Flutter 🚀",
+                        "Semoga aku bisa maem enak dan minum es teh setelah responsi 🚀",
 
                         textAlign: TextAlign.center,
 
